@@ -1,0 +1,317 @@
+object Form1: TForm1
+  Left = 418
+  Height = 349
+  Top = 179
+  Width = 298
+  Caption = 'Verificar Cupons'
+  ClientHeight = 349
+  ClientWidth = 298
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.2.4.0'
+  object ProgressBar1: TProgressBar
+    Left = 8
+    Height = 20
+    Hint = 'te'
+    Top = 314
+    Width = 280
+    ParentShowHint = False
+    ShowHint = True
+    Smooth = True
+    TabOrder = 1
+    BarShowText = True
+  end
+  object Button1: TButton
+    Left = 24
+    Height = 25
+    Top = 18
+    Width = 83
+    Caption = 'Pasta'
+    OnClick = Button1Click
+    TabOrder = 0
+  end
+  object lbTotalLiquido: TLabel
+    Left = 162
+    Height = 25
+    Top = 264
+    Width = 11
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 25
+    Top = 264
+    Width = 121
+    Caption = 'Total Liquido:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -19
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 24
+    Height = 17
+    Top = 164
+    Width = 73
+    Caption = 'Total Bruto:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotalBruto: TLabel
+    Left = 164
+    Height = 17
+    Top = 164
+    Width = 7
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 24
+    Height = 17
+    Top = 212
+    Width = 101
+    Caption = 'Total descontos:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotalDesconto: TLabel
+    Left = 164
+    Height = 17
+    Top = 212
+    Width = 7
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 24
+    Height = 17
+    Top = 189
+    Width = 106
+    Caption = 'Total cancelados:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotalCancelado: TLabel
+    Left = 164
+    Height = 17
+    Top = 189
+    Width = 7
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object AdvLed1: TAdvLed
+    Left = 259
+    Height = 24
+    Top = 18
+    Width = 24
+    State = lsOn
+  end
+  object lbProgressBar: TLabel
+    Left = 80
+    Height = 15
+    Top = 314
+    Width = 133
+    Caption = 'Carregamento completo!'
+    ParentColor = False
+    Visible = False
+  end
+  object dtInicio: TDateTimePicker
+    Left = 24
+    Height = 23
+    Top = 69
+    Width = 83
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 2
+    Enabled = False
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44887
+    Time = 0.556664097224711
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object dtFim: TDateTimePicker
+    Left = 24
+    Height = 23
+    Top = 109
+    Width = 83
+    CenturyFrom = 1941
+    MaxDate = 2958465
+    MinDate = -53780
+    TabOrder = 3
+    Enabled = False
+    TrailingSeparator = False
+    TextForNullDate = 'NULL'
+    LeadingZeros = True
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 44887
+    Time = 0.556664097224711
+    UseDefaultSeparators = True
+    HideDateTimeParts = []
+    MonthNames = 'Long'
+  end
+  object ckData: TCheckBox
+    Left = 164
+    Height = 19
+    Top = 69
+    Width = 108
+    Caption = 'Considerar datas'
+    Enabled = False
+    TabOrder = 4
+  end
+  object Label6: TLabel
+    Left = 24
+    Height = 17
+    Top = 236
+    Width = 106
+    Caption = 'Total acrescimos:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object lbTotalAcrescimos: TLabel
+    Left = 164
+    Height = 17
+    Top = 236
+    Width = 7
+    Caption = '0'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -13
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btnTotalizar: TButton
+    Left = 164
+    Height = 24
+    Top = 108
+    Width = 108
+    Caption = 'Totalizar'
+    Enabled = False
+    OnClick = btnTotalizarClick
+    TabOrder = 5
+  end
+  object lbTotalArquivos: TLabel
+    Left = 164
+    Height = 15
+    Top = 25
+    Width = 56
+    Caption = '0 Arquivos'
+    ParentColor = False
+  end
+  object btnCancelar: TButton
+    Left = 164
+    Height = 24
+    Top = 108
+    Width = 108
+    Caption = 'Cancelar'
+    OnClick = btnCancelarClick
+    TabOrder = 6
+    Visible = False
+  end
+  object Label1: TLabel
+    Left = 143
+    Height = 21
+    Top = 185
+    Width = 6
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label7: TLabel
+    Left = 143
+    Height = 21
+    Top = 208
+    Width = 6
+    Caption = '-'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label8: TLabel
+    Left = 141
+    Height = 21
+    Top = 232
+    Width = 11
+    Caption = '+'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    Top = 48
+  end
+end
