@@ -147,6 +147,7 @@ object Form1: TForm1
     Height = 24
     Top = 18
     Width = 24
+    State = lsOn
   end
   object lbProgressBar: TLabel
     Left = 80

@@ -127,6 +127,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  AdvLed1.State:= lsOn;
   dtInicio.Date:= StartOfTheMonth(IncMonth(Date, -1));
   dtFim.Date   := EndOfTheMonth  (IncMonth(Date, -1));
 end;
