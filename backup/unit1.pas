@@ -93,7 +93,9 @@ begin
     ckData.Enabled  := True;
     qtdArquivos     := ContaArquivo(path, 'AD*');
     if qtdArquivos > 0 then begin
-      AdvLed1.Kind  := lkGreenLight;
+      AdvLed1.Kind  := lkGreenLight;birin
+    end else begin
+      AdvLed1.Kind  := lkRedLight;
     end;
     lbTotalArquivos.Caption:= IntToStr(qtdArquivos) + ' Arquivos';
 end;
