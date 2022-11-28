@@ -319,6 +319,7 @@ begin
           FLbProgresso.Alignment   := taCenter;
           FLbProgresso.Layout      := tlCenter;
           FLbProgresso.Font.Color  := clWhite;
+          Terminate;
         end;
       end else begin
         vlrTotalBruto    := 0;
@@ -338,6 +339,7 @@ begin
         FLbProgresso.Alignment   := taCenter;
         FLbProgresso.Layout      := tlCenter;
         FLbProgresso.Font.Color  := clRed;
+        Terminate;
       end;
       Synchronize(@atualizaTela);
     finally

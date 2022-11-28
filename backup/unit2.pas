@@ -306,7 +306,6 @@ begin
         end;
       end;
       if Not Terminated then begin
-        Synchronize(@atualizaTela);
         FBarraProgresso.Position   := FBarraProgresso.Max;
         if FBarraProgresso.Position = FBarraProgresso.Max then begin
           FLbProgresso.Parent      := FBarraProgresso;
@@ -320,9 +319,14 @@ begin
           FLbProgresso.Alignment   := taCenter;
           FLbProgresso.Layout      := tlCenter;
           FLbProgresso.Font.Color  := clWhite;
+          Terminate;
         end;
       end else begin
-        Synchronize(@atualizaTela);
+        vlrTotalBruto    := 0;
+        vlrTotalLiquido  := 0;
+        vlrTotalDesconto := 0;
+        vlrTotalCancelado:= 0;
+        vlrTotalAcrescimo:= 0;
         FBarraProgresso.Position := FBarraProgresso.Max;
         FLbProgresso.Parent      := FBarraProgresso;
         FLbProgresso.Caption     := 'Processo cancelado!';
@@ -335,7 +339,9 @@ begin
         FLbProgresso.Alignment   := taCenter;
         FLbProgresso.Layout      := tlCenter;
         FLbProgresso.Font.Color  := clRed;
+        Terminate;
       end;
+      Synchronize(@atualizaTela);
     finally
       FindClose(F);
       FLbProgresso.Visible:= True;
